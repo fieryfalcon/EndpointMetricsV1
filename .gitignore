@@ -1,5 +1,6 @@
 # Node modules
 node_modules/
+release-builds/
 
 # Production build folder
 /Frontend/build/

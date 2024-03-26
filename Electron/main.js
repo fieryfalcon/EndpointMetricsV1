@@ -1,3 +1,5 @@
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+
 const { app, BrowserWindow } = require("electron");
 const path = require("path");
 const Store = require("electron-store");
@@ -27,7 +29,7 @@ function createWindow() {
   //   ? "http://localhost:3000" // Dev mode URL
   //   : `file://${path.join(__dirname, "../Frontend/build/index.html")}`; // Prod mode URL
 
-  mainWindow.loadURL("http://localhost:3000");
+  mainWindow.loadURL(`file://${path.join(__dirname, "./build/index.html")}`);
 
   mainWindow.on("closed", () => {
     mainWindow = null;

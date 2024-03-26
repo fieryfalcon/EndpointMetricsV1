@@ -4,10 +4,9 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder --prepackaged ../react-app/build"
+    "build": "electron-packager . --overwrite --platform=win32 --arch=x64 --prune=true --out=release-builds"
   },
   "dependencies": {
-    
     "axios": "^1.6.7",
     "battery-level": "^3.0.0",
     "electron-store": "^8.1.0",
@@ -15,21 +14,10 @@
     "fs": "^0.0.1-security",
     "node-fetch": "^3.3.2",
     "ping": "^0.4.4",
-    
     "systeminformation": "^5.21.24"
-  
   },
   "devDependencies": {
     "electron": "^28.2.2",
-    "electron-builder": "^22.9.1"
-  },
-  "build": {
-    "directories": {
-      "buildResources": "assets"
-    },
-    "files": [
-      "../react-app/build/**/*",
-      "main.js"
-    ]
+    "electron-packager": "^15.3.0"
   }
 }
